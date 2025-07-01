@@ -1,0 +1,7 @@
+{
+    "@@locale": "en",
+    "appName": "TaskFlow",    
+    "helloMessage": "Hello, {name}",
+    "enter_correct_email": "Please, enter the correcr email",
+    "email": "Email"
+}
