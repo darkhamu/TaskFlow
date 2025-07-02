@@ -84,6 +84,216 @@ class S {
   String get email {
     return Intl.message('Email', name: 'email', desc: '', args: []);
   }
+
+  /// `Field must be filled`
+  String get field_must_be_filled {
+    return Intl.message(
+      'Field must be filled',
+      name: 'field_must_be_filled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message('Username', name: 'username', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `The password must contain lowercase and uppercase, numbers, special characters and be longer than 8 characters`
+  String get password_requirements {
+    return Intl.message(
+      'The password must contain lowercase and uppercase, numbers, special characters and be longer than 8 characters',
+      name: 'password_requirements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get sign_up {
+    return Intl.message('Sign up', name: 'sign_up', desc: '', args: []);
+  }
+
+  /// `Sign in`
+  String get sign_in {
+    return Intl.message('Sign in', name: 'sign_in', desc: '', args: []);
+  }
+
+  /// `Registration failed`
+  String get registration_failed {
+    return Intl.message(
+      'Registration failed',
+      name: 'registration_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email already in use`
+  String get email_already_in_use {
+    return Intl.message(
+      'Email already in use',
+      name: 'email_already_in_use',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid email',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weak password`
+  String get weak_password {
+    return Intl.message(
+      'Weak password',
+      name: 'weak_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget password?`
+  String get forget_password {
+    return Intl.message(
+      'Forget password?',
+      name: 'forget_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login failed`
+  String get login_failed {
+    return Intl.message(
+      'Login failed',
+      name: 'login_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password reset email sent`
+  String get password_reset_email_sent {
+    return Intl.message(
+      'Password reset email sent',
+      name: 'password_reset_email_sent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The error of sending the email`
+  String get error_of_sending_the_email {
+    return Intl.message(
+      'The error of sending the email',
+      name: 'error_of_sending_the_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get reset_password {
+    return Intl.message(
+      'Reset password',
+      name: 'reset_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The specified account was not found`
+  String get account_not_found {
+    return Intl.message(
+      'The specified account was not found',
+      name: 'account_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! The task ran away!`
+  String get not_found_title {
+    return Intl.message(
+      'Oops! The task ran away!',
+      name: 'not_found_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Looks like you ended up where no tasks exist.\nMaybe it's already done? 😉`
+  String get not_found_subtitle {
+    return Intl.message(
+      'Looks like you ended up where no tasks exist.\nMaybe it\'s already done? 😉',
+      name: 'not_found_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get back_button {
+    return Intl.message('Back', name: 'back_button', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Design theme`
+  String get design_theme {
+    return Intl.message(
+      'Design theme',
+      name: 'design_theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System`
+  String get system {
+    return Intl.message('System', name: 'system', desc: '', args: []);
+  }
+
+  /// `Light`
+  String get light {
+    return Intl.message('Light', name: 'light', desc: '', args: []);
+  }
+
+  /// `Dark`
+  String get dark {
+    return Intl.message('Dark', name: 'dark', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Sign out`
+  String get sign_out {
+    return Intl.message('Sign out', name: 'sign_out', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -92,7 +302,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ru', countryCode: 'RU'),
+      Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

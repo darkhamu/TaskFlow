@@ -1,7 +1,0 @@
-{
-    "@@locale": "ru",
-    "appName": "TaskFlow",
-    "helloMessage": "Приветствуем, {name}",
-    "enter_correct_email": "Пожалуйста, введите корректную почту",
-    "email": "Почта"
-}

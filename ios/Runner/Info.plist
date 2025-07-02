@@ -7,7 +7,7 @@
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>ru_RU</string>
+		<string>ru</string>
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string>Task Flow</string>

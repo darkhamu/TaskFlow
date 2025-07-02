@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:task_flow/generated/l10n.dart';
 import 'package:task_flow/widgets/base/input_field_widget.dart';
 
+//Поле для ввода почты с валидацией
 class EmailInputWidget extends StatefulWidget {
   final TextEditingController emailController;
   final RegExp emailRegExp;
+  final String? errorText;
   const EmailInputWidget({
     super.key,
     required this.emailController,
     required this.emailRegExp,
+    this.errorText,
   });
 
   @override

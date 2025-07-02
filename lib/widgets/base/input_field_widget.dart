@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Основа маленьких полей
 class InputFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final String label;
@@ -21,22 +22,53 @@ class InputFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 300, maxWidth: 500),
       child: TextField(
         controller: controller,
         obscureText: obscureText,
         keyboardType: keyboardType,
         onChanged: onChanged,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.onSurface,
+          fontSize: 16,
+        ),
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: const TextStyle(fontSize: 20),
+          labelStyle: TextStyle(
+            fontSize: 14,
+            color: Theme.of(context).colorScheme.onSurface.withAlpha(150),
+          ),
+          floatingLabelStyle: TextStyle(
+            color:
+                errorText != null
+                    ? Theme.of(context).colorScheme.error
+                    : Theme.of(context).colorScheme.primary,
+          ),
           errorText: errorText,
-          border: const UnderlineInputBorder(borderSide: BorderSide()),
-          focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(width: 2),
+          errorStyle: TextStyle(color: Theme.of(context).colorScheme.error),
+          border: const UnderlineInputBorder(),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
+          errorBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.error,
+              width: 2,
+            ),
           ),
           suffixIcon: suffixIcon,
+          suffixIconColor: Theme.of(context).colorScheme.primary,
+          errorMaxLines: 3,
         ),
       ),
     );
