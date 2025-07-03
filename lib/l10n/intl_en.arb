@@ -30,5 +30,19 @@
     "light": "Light",
     "dark": "Dark",
     "language": "Language",
-    "sign_out": "Sign out"
+    "sign_out": "Sign out",
+    "in_process" : "In process",
+    "finished": "Finished",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "this_week": "This week",
+    "this_month": "This month",
+    "by_date_of_expiration": "By date of expiration",
+    "by_name": "By name",
+    "by_priority": "By priority",
+    "by_order": "By order",
+    "by_descending": "By descending",
+    "filters_and_sorting": "Filters and sorting",
+    "filters": "Filters",
+    "sorting": "Sorting"
 }

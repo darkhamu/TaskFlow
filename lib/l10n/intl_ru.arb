@@ -30,5 +30,19 @@
     "light": "Светлая",
     "dark": "Темная",
     "language": "Язык",
-    "sign_out": "Выйти из аккаунта"
+    "sign_out": "Выйти из аккаунта",
+    "in_process" : "В процессе",
+    "finished": "Завершены",
+    "today": "Сегодня",
+    "tomorrow": "Завтра",
+    "this_week": "На неделе",
+    "this_month": "В месяце",
+    "by_date_of_expiration": "По дате срока",
+    "by_name": "По названию",
+    "by_priority": "По приоритету",
+    "by_order": "По возрастанию",
+    "by_descending": "По убыванию",
+    "filters_and_sorting": "Фильтры и сортировка",
+    "filters": "Фильтры",
+    "sorting": "Сортировка"
 }

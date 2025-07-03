@@ -294,6 +294,91 @@ class S {
   String get sign_out {
     return Intl.message('Sign out', name: 'sign_out', desc: '', args: []);
   }
+
+  /// `In process`
+  String get in_process {
+    return Intl.message('In process', name: 'in_process', desc: '', args: []);
+  }
+
+  /// `Finished`
+  String get finished {
+    return Intl.message('Finished', name: 'finished', desc: '', args: []);
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Tomorrow`
+  String get tomorrow {
+    return Intl.message('Tomorrow', name: 'tomorrow', desc: '', args: []);
+  }
+
+  /// `This week`
+  String get this_week {
+    return Intl.message('This week', name: 'this_week', desc: '', args: []);
+  }
+
+  /// `This month`
+  String get this_month {
+    return Intl.message('This month', name: 'this_month', desc: '', args: []);
+  }
+
+  /// `By date of expiration`
+  String get by_date_of_expiration {
+    return Intl.message(
+      'By date of expiration',
+      name: 'by_date_of_expiration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By name`
+  String get by_name {
+    return Intl.message('By name', name: 'by_name', desc: '', args: []);
+  }
+
+  /// `By priority`
+  String get by_priority {
+    return Intl.message('By priority', name: 'by_priority', desc: '', args: []);
+  }
+
+  /// `By order`
+  String get by_order {
+    return Intl.message('By order', name: 'by_order', desc: '', args: []);
+  }
+
+  /// `By descending`
+  String get by_descending {
+    return Intl.message(
+      'By descending',
+      name: 'by_descending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters and sorting`
+  String get filters_and_sorting {
+    return Intl.message(
+      'Filters and sorting',
+      name: 'filters_and_sorting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get filters {
+    return Intl.message('Filters', name: 'filters', desc: '', args: []);
+  }
+
+  /// `Sorting`
+  String get sorting {
+    return Intl.message('Sorting', name: 'sorting', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
