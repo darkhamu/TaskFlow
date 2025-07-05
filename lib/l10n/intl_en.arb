@@ -44,5 +44,19 @@
     "by_descending": "By descending",
     "filters_and_sorting": "Filters and sorting",
     "filters": "Filters",
-    "sorting": "Sorting"
+    "sorting": "Sorting",
+    "name": "Name",
+    "description": "Description",
+    "deadline": "Deadline",
+    "priority": "Priority",
+    "urgent": "1 - Urgent",
+    "important": "2 - Important",
+    "medium": "3 - Medium",
+    "have_to_do": "4 - Have to do",
+    "if_possible": "5 - If possible",
+    "save": "Save",
+    "error": "Error",
+    "unsaved_data": "You have unsaved data",
+    "want_to_save": "Do you want to save them?",
+    "cancel": "Cancel"
 }

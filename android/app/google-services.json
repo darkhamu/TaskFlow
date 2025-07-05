@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "953924610449",
+    "firebase_url": "https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "taskflow-1282b",
     "storage_bucket": "taskflow-1282b.firebasestorage.app"
   },
@@ -12,7 +13,12 @@
           "package_name": "com.example.task_flow"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "953924610449-htmh85ch3cth2uno5np3o4g49bbd4ers.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCEYP3xz5izUiZpDB5UjUH7EJKZ6ni1ZUc"
@@ -20,7 +26,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953924610449-htmh85ch3cth2uno5np3o4g49bbd4ers.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "953924610449-3bd66m7uusspt3540a45q5jvqr1aadfs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.taskFlow"
+              }
+            }
+          ]
         }
       }
     }

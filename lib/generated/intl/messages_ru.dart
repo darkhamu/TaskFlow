@@ -36,7 +36,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "by_name": MessageLookupByLibrary.simpleMessage("По названию"),
     "by_order": MessageLookupByLibrary.simpleMessage("По возрастанию"),
     "by_priority": MessageLookupByLibrary.simpleMessage("По приоритету"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
     "dark": MessageLookupByLibrary.simpleMessage("Темная"),
+    "deadline": MessageLookupByLibrary.simpleMessage("Дедлайн"),
+    "description": MessageLookupByLibrary.simpleMessage("Описание"),
     "design_theme": MessageLookupByLibrary.simpleMessage("Тема оформления"),
     "email": MessageLookupByLibrary.simpleMessage("Почта"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
@@ -45,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_correct_email": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введите корректную почту",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
     "error_of_sending_the_email": MessageLookupByLibrary.simpleMessage(
       "Ошибка отправки письма",
     ),
@@ -57,12 +61,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "finished": MessageLookupByLibrary.simpleMessage("Завершены"),
     "forget_password": MessageLookupByLibrary.simpleMessage("Забыли пароль?"),
+    "have_to_do": MessageLookupByLibrary.simpleMessage("4 - Надо сделать"),
     "helloMessage": m0,
+    "if_possible": MessageLookupByLibrary.simpleMessage("5 - По возможности"),
+    "important": MessageLookupByLibrary.simpleMessage("2 - Важно"),
     "in_process": MessageLookupByLibrary.simpleMessage("В процессе"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Некорректная почта"),
     "language": MessageLookupByLibrary.simpleMessage("Язык"),
     "light": MessageLookupByLibrary.simpleMessage("Светлая"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Ошибка входа"),
+    "medium": MessageLookupByLibrary.simpleMessage("3 - Средне"),
+    "name": MessageLookupByLibrary.simpleMessage("Название"),
     "not_found_subtitle": MessageLookupByLibrary.simpleMessage(
       "Кажется, ты попал туда, где задач нет.\nА может, она просто уже выполнена? 😉",
     ),
@@ -76,10 +85,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_reset_email_sent": MessageLookupByLibrary.simpleMessage(
       "Письмо для сброса пароля было отправлено",
     ),
+    "priority": MessageLookupByLibrary.simpleMessage("Приоритет"),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Ошибка регистрации",
     ),
     "reset_password": MessageLookupByLibrary.simpleMessage("Сброс пароля"),
+    "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
     "search": MessageLookupByLibrary.simpleMessage("Поиск"),
     "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
     "sign_in": MessageLookupByLibrary.simpleMessage("Вход в систему"),
@@ -91,7 +102,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "this_week": MessageLookupByLibrary.simpleMessage("На неделе"),
     "today": MessageLookupByLibrary.simpleMessage("Сегодня"),
     "tomorrow": MessageLookupByLibrary.simpleMessage("Завтра"),
+    "unsaved_data": MessageLookupByLibrary.simpleMessage(
+      "У вас есть несохраненные данные",
+    ),
+    "urgent": MessageLookupByLibrary.simpleMessage("1 - Срочно"),
     "username": MessageLookupByLibrary.simpleMessage("Логин"),
+    "want_to_save": MessageLookupByLibrary.simpleMessage(
+      "Хотите сохранить их?",
+    ),
     "weak_password": MessageLookupByLibrary.simpleMessage("Слабый пароль"),
   };
 }

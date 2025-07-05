@@ -36,7 +36,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "by_name": MessageLookupByLibrary.simpleMessage("By name"),
     "by_order": MessageLookupByLibrary.simpleMessage("By order"),
     "by_priority": MessageLookupByLibrary.simpleMessage("By priority"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+    "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
     "design_theme": MessageLookupByLibrary.simpleMessage("Design theme"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
@@ -45,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_correct_email": MessageLookupByLibrary.simpleMessage(
       "Please, enter the correcr email",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "error_of_sending_the_email": MessageLookupByLibrary.simpleMessage(
       "The error of sending the email",
     ),
@@ -57,12 +61,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "finished": MessageLookupByLibrary.simpleMessage("Finished"),
     "forget_password": MessageLookupByLibrary.simpleMessage("Forget password?"),
+    "have_to_do": MessageLookupByLibrary.simpleMessage("4 - Have to do"),
     "helloMessage": m0,
+    "if_possible": MessageLookupByLibrary.simpleMessage("5 - If possible"),
+    "important": MessageLookupByLibrary.simpleMessage("2 - Important"),
     "in_process": MessageLookupByLibrary.simpleMessage("In process"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Login failed"),
+    "medium": MessageLookupByLibrary.simpleMessage("3 - Medium"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "not_found_subtitle": MessageLookupByLibrary.simpleMessage(
       "Looks like you ended up where no tasks exist.\nMaybe it\'s already done? 😉",
     ),
@@ -76,10 +85,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_reset_email_sent": MessageLookupByLibrary.simpleMessage(
       "Password reset email sent",
     ),
+    "priority": MessageLookupByLibrary.simpleMessage("Priority"),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Registration failed",
     ),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset password"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
@@ -91,7 +102,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "this_week": MessageLookupByLibrary.simpleMessage("This week"),
     "today": MessageLookupByLibrary.simpleMessage("Today"),
     "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
+    "unsaved_data": MessageLookupByLibrary.simpleMessage(
+      "You have unsaved data",
+    ),
+    "urgent": MessageLookupByLibrary.simpleMessage("1 - Urgent"),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
+    "want_to_save": MessageLookupByLibrary.simpleMessage(
+      "Do you want to save them?",
+    ),
     "weak_password": MessageLookupByLibrary.simpleMessage("Weak password"),
   };
 }

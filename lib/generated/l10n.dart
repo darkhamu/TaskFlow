@@ -379,6 +379,96 @@ class S {
   String get sorting {
     return Intl.message('Sorting', name: 'sorting', desc: '', args: []);
   }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Deadline`
+  String get deadline {
+    return Intl.message('Deadline', name: 'deadline', desc: '', args: []);
+  }
+
+  /// `Priority`
+  String get priority {
+    return Intl.message('Priority', name: 'priority', desc: '', args: []);
+  }
+
+  /// `1 - Urgent`
+  String get urgent {
+    return Intl.message('1 - Urgent', name: 'urgent', desc: '', args: []);
+  }
+
+  /// `2 - Important`
+  String get important {
+    return Intl.message('2 - Important', name: 'important', desc: '', args: []);
+  }
+
+  /// `3 - Medium`
+  String get medium {
+    return Intl.message('3 - Medium', name: 'medium', desc: '', args: []);
+  }
+
+  /// `4 - Have to do`
+  String get have_to_do {
+    return Intl.message(
+      '4 - Have to do',
+      name: 'have_to_do',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `5 - If possible`
+  String get if_possible {
+    return Intl.message(
+      '5 - If possible',
+      name: 'if_possible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `You have unsaved data`
+  String get unsaved_data {
+    return Intl.message(
+      'You have unsaved data',
+      name: 'unsaved_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to save them?`
+  String get want_to_save {
+    return Intl.message(
+      'Do you want to save them?',
+      name: 'want_to_save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -44,5 +44,19 @@
     "by_descending": "По убыванию",
     "filters_and_sorting": "Фильтры и сортировка",
     "filters": "Фильтры",
-    "sorting": "Сортировка"
+    "sorting": "Сортировка",
+    "name": "Название",
+    "description": "Описание",
+    "deadline": "Дедлайн",
+    "priority": "Приоритет",
+    "urgent": "1 - Срочно",
+    "important": "2 - Важно",
+    "medium": "3 - Средне",
+    "have_to_do": "4 - Надо сделать",
+    "if_possible": "5 - По возможности",
+    "save": "Сохранить",
+    "error": "Ошибка",
+    "unsaved_data": "У вас есть несохраненные данные",
+    "want_to_save": "Хотите сохранить их?",
+    "cancel": "Отмена"
 }

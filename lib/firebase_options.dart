@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     authDomain: 'taskflow-1282b.firebaseapp.com',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
     measurementId: 'G-HDQ29DE48M',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -62,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '953924610449',
     projectId: 'taskflow-1282b',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -71,5 +73,6 @@ class DefaultFirebaseOptions {
     projectId: 'taskflow-1282b',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
     iosBundleId: 'com.example.taskFlow',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
 }
