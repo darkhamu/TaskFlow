@@ -469,6 +469,181 @@ class S {
   String get cancel {
     return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
   }
+
+  /// `In 15 minutes`
+  String get reminder15m {
+    return Intl.message(
+      'In 15 minutes',
+      name: 'reminder15m',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In 30 minutes`
+  String get reminder30m {
+    return Intl.message(
+      'In 30 minutes',
+      name: 'reminder30m',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In 1 hour`
+  String get reminder1h {
+    return Intl.message('In 1 hour', name: 'reminder1h', desc: '', args: []);
+  }
+
+  /// `In 6 hours`
+  String get reminder6h {
+    return Intl.message('In 6 hours', name: 'reminder6h', desc: '', args: []);
+  }
+
+  /// `In 12 hours`
+  String get reminder12h {
+    return Intl.message('In 12 hours', name: 'reminder12h', desc: '', args: []);
+  }
+
+  /// `In 1 day`
+  String get reminder1d {
+    return Intl.message('In 1 day', name: 'reminder1d', desc: '', args: []);
+  }
+
+  /// `In 3 days`
+  String get reminder3d {
+    return Intl.message('In 3 days', name: 'reminder3d', desc: '', args: []);
+  }
+
+  /// `In 1 week`
+  String get reminder1w {
+    return Intl.message('In 1 week', name: 'reminder1w', desc: '', args: []);
+  }
+
+  /// `In 1 month`
+  String get reminder1mo {
+    return Intl.message('In 1 month', name: 'reminder1mo', desc: '', args: []);
+  }
+
+  /// `Time of reminder`
+  String get time_of_reminder {
+    return Intl.message(
+      'Time of reminder',
+      name: 'time_of_reminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select`
+  String get select {
+    return Intl.message('Select', name: 'select', desc: '', args: []);
+  }
+
+  /// `Change`
+  String get change {
+    return Intl.message('Change', name: 'change', desc: '', args: []);
+  }
+
+  /// `Select time`
+  String get select_time {
+    return Intl.message('Select time', name: 'select_time', desc: '', args: []);
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
+  /// `Overdue by`
+  String get overdue {
+    return Intl.message('Overdue by', name: 'overdue', desc: '', args: []);
+  }
+
+  /// `days`
+  String get days {
+    return Intl.message('days', name: 'days', desc: '', args: []);
+  }
+
+  /// `hr`
+  String get hours {
+    return Intl.message('hr', name: 'hours', desc: '', args: []);
+  }
+
+  /// `min`
+  String get minutes {
+    return Intl.message('min', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `Complete`
+  String get complete {
+    return Intl.message('Complete', name: 'complete', desc: '', args: []);
+  }
+
+  /// `Repeat`
+  String get repeat {
+    return Intl.message('Repeat', name: 'repeat', desc: '', args: []);
+  }
+
+  /// `Delete task?`
+  String get delete_confirmation {
+    return Intl.message(
+      'Delete task?',
+      name: 'delete_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to delete "{taskName}"?`
+  String confirm_delete_task(Object taskName) {
+    return Intl.message(
+      'Are you sure you want to delete "$taskName"?',
+      name: 'confirm_delete_task',
+      desc: '',
+      args: [taskName],
+    );
+  }
+
+  /// `Task deleted successfully`
+  String get task_deleted {
+    return Intl.message(
+      'Task deleted successfully',
+      name: 'task_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Task completed successfully`
+  String get task_completed {
+    return Intl.message(
+      'Task completed successfully',
+      name: 'task_completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Task repeated successfully`
+  String get task_repeated {
+    return Intl.message(
+      'Task repeated successfully',
+      name: 'task_repeated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have`
+  String get you_have {
+    return Intl.message('You have', name: 'you_have', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
