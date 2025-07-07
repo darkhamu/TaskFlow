@@ -86,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "medium": MessageLookupByLibrary.simpleMessage("3 - Средне"),
     "minutes": MessageLookupByLibrary.simpleMessage("мин."),
     "name": MessageLookupByLibrary.simpleMessage("Название"),
+    "no_tasks_found": MessageLookupByLibrary.simpleMessage(
+      "Задачи не были найдены",
+    ),
     "not_found_subtitle": MessageLookupByLibrary.simpleMessage(
       "Кажется, ты попал туда, где задач нет.\nА может, она просто уже выполнена? 😉",
     ),

@@ -4,25 +4,30 @@ import 'package:intl/intl.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import '../models/task_model.dart';
+import 'package:flutter/foundation.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-FlutterLocalNotificationsPlugin();
+    FlutterLocalNotificationsPlugin();
 
 Future<void> initNotifications() async {
   const AndroidInitializationSettings initializationSettingsAndroid =
-  AndroidInitializationSettings('@mipmap/ic_launcher');
+      AndroidInitializationSettings('@mipmap/ic_launcher');
 
   const DarwinInitializationSettings initializationSettingsIOS =
-  DarwinInitializationSettings(
-    requestAlertPermission: true,
-    requestBadgePermission: true,
-    requestSoundPermission: true,
-  );
+      DarwinInitializationSettings(
+        requestAlertPermission: true,
+
+        requestBadgePermission: true,
+
+        requestSoundPermission: true,
+      );
 
   const InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
+
     iOS: initializationSettingsIOS,
   );
+
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 }
 
@@ -32,8 +37,11 @@ Future<void> initializeTimezone() async {
 }
 
 Future<String> getLocalizedNotificationText(
-    String taskName, DateTime deadline, String userLanguageCode, String type
-    ) async {
+  String taskName,
+  DateTime deadline,
+  String userLanguageCode,
+  String type,
+) async {
   Intl.defaultLocale = userLanguageCode;
 
   final DateFormat dateFormatter = DateFormat.yMMMd(userLanguageCode);
@@ -42,25 +50,43 @@ Future<String> getLocalizedNotificationText(
   final String formattedDate = dateFormatter.format(deadline);
   final String formattedTime = timeFormatter.format(deadline);
 
-  if(type == 'body'){
-    switch (userLanguageCode) {
-      case 'ru':
-        return 'Напоминаем, задача "$taskName" должна быть завершена до $formattedDate $formattedTime.';
-      case 'en':
-      default:
-        return 'Reminder: Task "$taskName" must be completed by $formattedDate $formattedTime.';
-    }
+  // кастомный текст уведомления
+  switch (type) {
+    case 'body':
+      switch (userLanguageCode) {
+        case 'ru':
+          return 'Напоминаем, задача "$taskName" должна быть завершена до $formattedDate $formattedTime.';
+        case 'en':
+        default:
+          return 'Reminder: Task "$taskName" must be completed by $formattedDate $formattedTime.';
+      }
+    case 'head':
+      switch (userLanguageCode) {
+        case 'ru':
+          return 'Напоминание о задаче!';
+        case 'en':
+        default:
+          return 'Task reminder!';
+      }
+    case 'expired_body':
+      switch (userLanguageCode) {
+        case 'ru':
+          return 'Задача "$taskName" истёк срок выполнения: $formattedDate $formattedTime. Пожалуйста, завершите ее.';
+        case 'en':
+        default:
+          return 'Task "$taskName" deadline passed: $formattedDate $formattedTime. Please complete it.';
+      }
+    case 'expired_head':
+      switch (userLanguageCode) {
+        case 'ru':
+          return 'Задача просрочена!';
+        case 'en':
+        default:
+          return 'Task overdue!';
+      }
+    default:
+      return '';
   }
-  else if (type == 'head'){
-    switch (userLanguageCode) {
-      case 'ru':
-        return 'Напоминание о задаче!';
-      case 'en':
-      default:
-        return 'Task reminder!';
-    }
-  }
-  return '';
 }
 
 Future<void> scheduleTaskReminders({
@@ -68,40 +94,45 @@ Future<void> scheduleTaskReminders({
   required String userLanguageCode,
 }) async {
   final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
-  debugPrint('DEBUG: Current local time (tz.local): $now');
-  debugPrint('DEBUG: Task deadlineDateTime from model: ${task.deadlineDateTime}');
 
-  final tz.TZDateTime localDeadlineTZ = tz.TZDateTime.from(task.deadlineDateTime, tz.local);
-  debugPrint('DEBUG: Task deadlineTZ (tz.local): $localDeadlineTZ');
-
+  final tz.TZDateTime localDeadlineTZ = tz.TZDateTime.from(
+    task.deadlineDateTime,
+    tz.local,
+  );
 
   for (final int reminderOffsetMinutes in task.reminders) {
-    final tz.TZDateTime scheduledNotificationDateTime =
-    localDeadlineTZ.subtract(Duration(minutes: reminderOffsetMinutes));
-    debugPrint('DEBUG: Scheduled notification time (tz.local) for -$reminderOffsetMinutes mins: $scheduledNotificationDateTime');
+    final tz.TZDateTime scheduledNotificationDateTime = localDeadlineTZ
+        .subtract(Duration(minutes: reminderOffsetMinutes));
 
     if (scheduledNotificationDateTime.isAfter(now)) {
       final String notificationBody = await getLocalizedNotificationText(
-          task.name, task.deadlineDateTime, userLanguageCode, 'body'
+        task.name,
+        task.deadlineDateTime,
+        userLanguageCode,
+        'body',
       );
 
       final String notificationHead = await getLocalizedNotificationText(
-          task.name, task.deadlineDateTime, userLanguageCode, 'head'
+        task.name,
+        task.deadlineDateTime,
+        userLanguageCode,
+        'head',
       );
 
-      final int notificationId = '${task.id}_$reminderOffsetMinutes'.hashCode;
+      final int notificationId =
+          '${task.id}_reminder_$reminderOffsetMinutes'.hashCode;
 
       const AndroidNotificationDetails androidPlatformChannelSpecifics =
-      AndroidNotificationDetails(
-        'task_reminders_channel',
-        'Напоминания о задачах',
-        channelDescription: 'Уведомления о предстоящих задачах',
-        importance: Importance.max,
-        priority: Priority.high,
-        showWhen: false,
-      );
+          AndroidNotificationDetails(
+            'task_reminders_channel',
+            'Напоминания о задачах',
+            channelDescription: 'Уведомления о предстоящих задачах',
+            importance: Importance.max,
+            priority: Priority.high,
+            showWhen: false,
+          );
       const DarwinNotificationDetails iOSPlatformChannelSpecifics =
-      DarwinNotificationDetails();
+          DarwinNotificationDetails();
       const NotificationDetails platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics,
@@ -115,15 +146,66 @@ Future<void> scheduleTaskReminders({
         platformChannelSpecifics,
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
         matchDateTimeComponents: DateTimeComponents.time,
+        payload: task.id,
+      );
+    }
+  }
+  if (!task.isDone) {
+    final tz.TZDateTime expiredNotificationDateTime = localDeadlineTZ;
+    if (expiredNotificationDateTime.isAfter(now) ||
+        expiredNotificationDateTime.isAtSameMomentAs(now)) {
+      final String expiredNotificationBody = await getLocalizedNotificationText(
+        task.name,
+        task.deadlineDateTime,
+        userLanguageCode,
+        'expired_body',
+      );
+      final String expiredNotificationHead = await getLocalizedNotificationText(
+        task.name,
+        task.deadlineDateTime,
+        userLanguageCode,
+        'expired_head',
+      );
+
+      final int expiredNotificationId = '${task.id}_expired'.hashCode;
+
+      const AndroidNotificationDetails androidPlatformChannelSpecifics =
+          AndroidNotificationDetails(
+            'task_expired_channel',
+            'Просроченные задачи',
+            channelDescription:
+                'Уведомления о задачах, срок выполнения которых истёк',
+            importance: Importance.max,
+            priority: Priority.high,
+            showWhen: true,
+          );
+      const DarwinNotificationDetails iOSPlatformChannelSpecifics =
+          DarwinNotificationDetails();
+      const NotificationDetails platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics,
+        iOS: iOSPlatformChannelSpecifics,
+      );
+
+      await flutterLocalNotificationsPlugin.zonedSchedule(
+        expiredNotificationId,
+        expiredNotificationHead,
+        expiredNotificationBody,
+        expiredNotificationDateTime,
+        platformChannelSpecifics,
+        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        matchDateTimeComponents: DateTimeComponents.time,
+        payload: task.id,
       );
     }
   }
 }
 
-// Функция для отмены всех напоминаний для задачи
 Future<void> cancelTaskReminders(TaskModel task) async {
   for (final int reminderOffsetMinutes in task.reminders) {
-    final int notificationId = '${task.id}_$reminderOffsetMinutes'.hashCode;
+    final int notificationId =
+        '${task.id}_reminder_$reminderOffsetMinutes'.hashCode;
     await flutterLocalNotificationsPlugin.cancel(notificationId);
   }
+  final int expiredNotificationId = '${task.id}_expired'.hashCode;
+  await flutterLocalNotificationsPlugin.cancel(expiredNotificationId);
 }

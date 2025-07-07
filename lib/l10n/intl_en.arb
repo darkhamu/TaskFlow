@@ -85,5 +85,6 @@
     "task_deleted": "Task deleted successfully",
     "task_completed": "Task completed successfully",
     "task_repeated": "Task repeated successfully",
-    "you_have": "You have"
+    "you_have": "You have",
+    "no_tasks_found": "No tasks found"
 }

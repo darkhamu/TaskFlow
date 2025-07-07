@@ -644,6 +644,16 @@ class S {
   String get you_have {
     return Intl.message('You have', name: 'you_have', desc: '', args: []);
   }
+
+  /// `No tasks found`
+  String get no_tasks_found {
+    return Intl.message(
+      'No tasks found',
+      name: 'no_tasks_found',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

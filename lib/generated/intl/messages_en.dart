@@ -84,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "medium": MessageLookupByLibrary.simpleMessage("3 - Medium"),
     "minutes": MessageLookupByLibrary.simpleMessage("min"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "no_tasks_found": MessageLookupByLibrary.simpleMessage("No tasks found"),
     "not_found_subtitle": MessageLookupByLibrary.simpleMessage(
       "Looks like you ended up where no tasks exist.\nMaybe it\'s already done? 😉",
     ),
