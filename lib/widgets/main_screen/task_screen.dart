@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
+import 'package:provider/provider.dart';
 import 'package:task_flow/models/task_model.dart';
 import 'package:task_flow/utils/parsers.dart';
 import 'package:task_flow/widgets/base/input_field_widget.dart';
@@ -10,8 +11,11 @@ import 'package:task_flow/widgets/base/input_with_border_base.dart';
 import 'package:task_flow/widgets/base/round_button_widget.dart';
 
 import '../../generated/l10n.dart';
+import '../../main.dart';
+import '../../providers/language_provider.dart';
 import '../../utils/date_time_util.dart';
 import '../../utils/dialog_util.dart';
+import '../../utils/reminder_service.dart';
 import '../../utils/task_repository.dart';
 import '../base/priority_dropdown.dart';
 
@@ -132,6 +136,9 @@ class _TaskScreenState extends State<TaskScreen> {
     final name = nameController.text.trim();
     final description = descriptionController.text.trim();
 
+    final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    final String currentUserLanguageCode = languageProvider.locale.languageCode;
+
     if (name.isEmpty || description.isEmpty) {
       setState(() {
         _isNameEmpty = name.isEmpty;
@@ -141,12 +148,13 @@ class _TaskScreenState extends State<TaskScreen> {
     }
 
     try {
-      final timeString = '${deadlineTime.hour}:${deadlineTime.minute}';
-      final remindersMap =
-          _selectedTimes
-              .map((text) => _reminderOptions[text] ?? 0)
-              .where((minutes) => minutes > 0)
-              .toList();
+      final timeString =
+          '${deadlineTime.hour.toString().padLeft(2, '0')}:'
+          '${deadlineTime.minute.toString().padLeft(2, '0')}';
+      final remindersMap = _selectedTimes
+          .map((text) => _reminderOptions[text] ?? 0)
+          .where((minutes) => minutes > 0)
+          .toList();
 
       final taskToSave = TaskModel(
         id: widget.taskModel?.id ?? '',
@@ -165,20 +173,22 @@ class _TaskScreenState extends State<TaskScreen> {
         await _taskRepository.addTask(taskToSave);
       }
 
-      if (mounted) {
-        setState(() {
-          _initialName = name;
-          _initialDescription = description;
-          _initialPriority = _selectedPriority;
-          _initialDeadlineDate = deadlineDate.toString();
-          _initialDeadlineTime = timeString;
-        });
-      }
+      Future(() async {
+        try {
+          await cancelTaskReminders(taskToSave);
+          await scheduleTaskReminders(task: taskToSave,userLanguageCode: currentUserLanguageCode);
+        } catch (e) {
+          debugPrint('Reminder scheduling failed: $e');
+        }
+      });
+
+      debugPrint('Task deadline: ${taskToSave.deadlineDateTime}');
+      debugPrint('Reminders: ${taskToSave.reminders}');
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('${S.of(context).error}: $e')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${S.of(context).error}: $e')),
+        );
       }
     }
   }

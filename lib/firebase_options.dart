@@ -52,9 +52,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '953924610449',
     projectId: 'taskflow-1282b',
     authDomain: 'taskflow-1282b.firebaseapp.com',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
     measurementId: 'G-HDQ29DE48M',
-    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -62,8 +62,8 @@ class DefaultFirebaseOptions {
     appId: '1:953924610449:android:1884dd6cda6fdc23ba1230',
     messagingSenderId: '953924610449',
     projectId: 'taskflow-1282b',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
-    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -71,8 +71,10 @@ class DefaultFirebaseOptions {
     appId: '1:953924610449:ios:41336610261e21bcba1230',
     messagingSenderId: '953924610449',
     projectId: 'taskflow-1282b',
+    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'taskflow-1282b.firebasestorage.app',
+    iosClientId: '953924610449-3bd66m7uusspt3540a45q5jvqr1aadfs.apps.googleusercontent.com',
     iosBundleId: 'com.example.taskFlow',
-    databaseURL: 'https://taskflow-1282b-default-rtdb.europe-west1.firebasedatabase.app'
   );
+
 }

@@ -1,12 +1,21 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:task_flow/providers/language_provider.dart';
 import 'package:task_flow/providers/theme_provider.dart';
+import 'package:task_flow/utils/reminder_service.dart';
 import 'package:task_flow/widgets/base/not_found_page.dart';
+import 'package:timezone/data/latest.dart' as tz;
 import 'firebase_options.dart';
 import 'package:task_flow/generated/l10n.dart';
 import 'package:task_flow/theme/dark_theme.dart';
@@ -15,6 +24,7 @@ import 'package:task_flow/widgets/auth_screens/forget_password_screen.dart';
 import 'package:task_flow/widgets/auth_screens/sign_in_screen.dart';
 import 'package:task_flow/widgets/auth_screens/sign_up_screen.dart';
 import 'package:task_flow/widgets/main_screen/main_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,8 +38,20 @@ void main() async {
   final themeProvider = ThemeProvider();
   final languageProvider = LanguageProvider();
 
+  await initNotifications();
+  await initializeTimezone();
+  await requestNotificationPermission();
+
   await themeProvider.loadTheme();
   await languageProvider.loadLanguage();
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+  if (kIsWeb) {
+    await messaging.requestPermission();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('🔔 Web Notification: ${message.notification?.title}');
+    });
+  }
 
   runApp(
     MultiProvider(
@@ -41,6 +63,16 @@ void main() async {
     ),
   );
 }
+
+Future<void> requestNotificationPermission() async {
+  if (Platform.isAndroid || Platform.isIOS) {
+    var status = await Permission.notification.status;
+    if (!status.isGranted) {
+      await Permission.notification.request();
+    }
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

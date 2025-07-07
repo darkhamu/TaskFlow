@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class TaskModel {
   final String id;
   final String name;
@@ -68,5 +70,27 @@ class TaskModel {
       'isDone': isDone,
       'reminders': reminders,
     };
+  }
+}
+
+extension TaskDateTime on TaskModel {
+  DateTime get deadlineDateTime {
+    try {
+      final dateStr = deadlineDate.split(' ').first;
+      final date = DateTime.tryParse(dateStr) ?? DateTime.now();
+
+      final normalizedTime = deadlineTime.split(':')
+          .map((part) => part.padLeft(2, '0'))
+          .join(':');
+
+      final timeParts = normalizedTime.split(':');
+      final hour = int.tryParse(timeParts[0]) ?? 0;
+      final minute = int.tryParse(timeParts[1]) ?? 0;
+
+      return DateTime(date.year, date.month, date.day, hour, minute);
+    } catch (e) {
+      debugPrint('Error parsing deadline: $e');
+      return DateTime.now().add(const Duration(days: 1));
+    }
   }
 }
