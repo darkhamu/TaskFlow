@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
@@ -9,9 +8,7 @@ import 'package:task_flow/utils/parsers.dart';
 import 'package:task_flow/widgets/base/input_field_widget.dart';
 import 'package:task_flow/widgets/base/input_with_border_base.dart';
 import 'package:task_flow/widgets/base/round_button_widget.dart';
-
 import '../../generated/l10n.dart';
-import '../../main.dart';
 import '../../providers/language_provider.dart';
 import '../../utils/date_time_util.dart';
 import '../../utils/dialog_util.dart';
@@ -177,13 +174,8 @@ class _TaskScreenState extends State<TaskScreen> {
         try {
           await cancelTaskReminders(taskToSave);
           await scheduleTaskReminders(task: taskToSave,userLanguageCode: currentUserLanguageCode);
-        } catch (e) {
-          debugPrint('Reminder scheduling failed: $e');
-        }
+        } catch (e) { }
       });
-
-      debugPrint('Task deadline: ${taskToSave.deadlineDateTime}');
-      debugPrint('Reminders: ${taskToSave.reminders}');
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -303,11 +295,14 @@ class _TaskScreenState extends State<TaskScreen> {
                                   });
                                 }
                               },
-                              child: Text(
-                                deadlineDate.toString().split(' ').first,
-                                style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 4),
+                                child: Text(
+                                  deadlineDate.toString().split(' ').first,
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
+                                  ),
                                 ),
                               ),
                             ),
@@ -327,11 +322,14 @@ class _TaskScreenState extends State<TaskScreen> {
                                   });
                                 }
                               },
-                              child: Text(
-                                deadlineTime.format(context),
-                                style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 4),
+                                child: Text(
+                                  deadlineTime.format(context),
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
+                                  ),
                                 ),
                               ),
                             ),

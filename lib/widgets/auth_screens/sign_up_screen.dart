@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task_flow/generated/l10n.dart';
-import 'package:task_flow/widgets/auth_screens/sign_in_screen.dart';
 import 'package:task_flow/widgets/base/clickable_text_widget.dart';
 import 'package:task_flow/widgets/base/email_input_widget.dart';
 import 'package:task_flow/widgets/base/password_input_widget.dart';

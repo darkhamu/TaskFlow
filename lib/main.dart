@@ -1,13 +1,9 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +11,6 @@ import 'package:task_flow/providers/language_provider.dart';
 import 'package:task_flow/providers/theme_provider.dart';
 import 'package:task_flow/utils/reminder_service.dart';
 import 'package:task_flow/widgets/base/not_found_page.dart';
-import 'package:timezone/data/latest.dart' as tz;
 import 'firebase_options.dart';
 import 'package:task_flow/generated/l10n.dart';
 import 'package:task_flow/theme/dark_theme.dart';

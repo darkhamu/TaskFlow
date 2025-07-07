@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import '../models/task_model.dart';
-import 'package:flutter/foundation.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -202,9 +200,9 @@ Future<void> scheduleTaskReminders({
 
 Future<void> cancelTaskReminders(TaskModel task) async {
   for (final int reminderOffsetMinutes in task.reminders) {
-    final int notificationId =
+    final int notificationId1 =
         '${task.id}_reminder_$reminderOffsetMinutes'.hashCode;
-    await flutterLocalNotificationsPlugin.cancel(notificationId);
+    await flutterLocalNotificationsPlugin.cancel(notificationId1);
   }
   final int expiredNotificationId = '${task.id}_expired'.hashCode;
   await flutterLocalNotificationsPlugin.cancel(expiredNotificationId);

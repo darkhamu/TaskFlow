@@ -5,6 +5,8 @@ import 'package:task_flow/generated/l10n.dart';
 import 'package:task_flow/models/task_model.dart';
 import 'package:intl/intl.dart';
 
+import '../../utils/reminder_service.dart';
+
 class TaskCard extends StatefulWidget {
   final TaskModel task;
   final VoidCallback onDelete;
@@ -115,6 +117,7 @@ class _TaskCardState extends State<TaskCard> {
 
   void _handleComplete() {
     setState(() {
+      cancelTaskReminders(widget.task);
       _isDone = true;
     });
     widget.onComplete();
