@@ -86,5 +86,9 @@
     "task_completed": "Task completed successfully",
     "task_repeated": "Task repeated successfully",
     "you_have": "You have",
-    "no_tasks_found": "No tasks found"
+    "no_tasks_found": "No tasks found",
+    "notification_permission_title": "Notification Permission",
+    "notification_permission_content": "For the app to function fully and provide reminders, access to notifications is required. Please enable notifications in the app settings.",
+    "notification_permission_open_settings": "Open Settings",
+    "notification_permission_later": "Later"
 }

@@ -91,6 +91,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "not_found_title": MessageLookupByLibrary.simpleMessage(
       "Oops! The task ran away!",
     ),
+    "notification_permission_content": MessageLookupByLibrary.simpleMessage(
+      "For the app to function fully and provide reminders, access to notifications is required. Please enable notifications in the app settings.",
+    ),
+    "notification_permission_later": MessageLookupByLibrary.simpleMessage(
+      "Later",
+    ),
+    "notification_permission_open_settings":
+        MessageLookupByLibrary.simpleMessage("Open Settings"),
+    "notification_permission_title": MessageLookupByLibrary.simpleMessage(
+      "Notification Permission",
+    ),
     "overdue": MessageLookupByLibrary.simpleMessage("Overdue by"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_requirements": MessageLookupByLibrary.simpleMessage(

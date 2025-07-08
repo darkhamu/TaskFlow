@@ -654,6 +654,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification Permission`
+  String get notification_permission_title {
+    return Intl.message(
+      'Notification Permission',
+      name: 'notification_permission_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For the app to function fully and provide reminders, access to notifications is required. Please enable notifications in the app settings.`
+  String get notification_permission_content {
+    return Intl.message(
+      'For the app to function fully and provide reminders, access to notifications is required. Please enable notifications in the app settings.',
+      name: 'notification_permission_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open Settings`
+  String get notification_permission_open_settings {
+    return Intl.message(
+      'Open Settings',
+      name: 'notification_permission_open_settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Later`
+  String get notification_permission_later {
+    return Intl.message(
+      'Later',
+      name: 'notification_permission_later',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

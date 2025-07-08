@@ -95,6 +95,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "not_found_title": MessageLookupByLibrary.simpleMessage(
       "Ой! Задача убежала!",
     ),
+    "notification_permission_content": MessageLookupByLibrary.simpleMessage(
+      "Для полноценной работы приложения и напоминаний требуется доступ к уведомлениям. Пожалуйста, разрешите уведомления в настройках приложения.",
+    ),
+    "notification_permission_later": MessageLookupByLibrary.simpleMessage(
+      "Позже",
+    ),
+    "notification_permission_open_settings":
+        MessageLookupByLibrary.simpleMessage("Открыть настройки"),
+    "notification_permission_title": MessageLookupByLibrary.simpleMessage(
+      "Разрешение на уведомления",
+    ),
     "overdue": MessageLookupByLibrary.simpleMessage("Просрочено на"),
     "password": MessageLookupByLibrary.simpleMessage("Пароль"),
     "password_requirements": MessageLookupByLibrary.simpleMessage(
